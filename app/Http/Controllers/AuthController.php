@@ -24,6 +24,12 @@ class AuthController extends Controller
         return view('/pages/register');
     }
 
+    public function displayDashboard()
+    {
+
+        return view('/pages/dashboard');
+    }
+
     public function register(Request $request)
     {
         //
@@ -85,9 +91,6 @@ class AuthController extends Controller
             'email' => 'Invalid email or password.',
         ]);
 
-
-        
     }
-
     
 }
