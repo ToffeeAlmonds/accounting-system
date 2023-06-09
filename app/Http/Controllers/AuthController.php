@@ -6,6 +6,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
+
 class AuthController extends Controller
 {
     /**
@@ -26,8 +27,13 @@ class AuthController extends Controller
 
     public function displayDashboard()
     {
+        $active_menu = 'dashboard';
+        return view('/pages/dashboard', compact('active_menu'));
+    }
 
-        return view('/pages/dashboard');
+    public function displayUser()
+    {
+       
     }
 
     public function register(Request $request)

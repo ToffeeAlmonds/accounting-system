@@ -8,6 +8,7 @@
 /.vscode
 /.phpstorm.meta.php
 /.phpstorm.stubs.php
+public/uploads/
 
 # Logs and backups
 /storage/logs/*.log
