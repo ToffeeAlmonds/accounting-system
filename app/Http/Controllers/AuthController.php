@@ -26,8 +26,9 @@ class AuthController extends Controller
 
     public function displayDashboard()
     {
+        $active_menu = 'dashboard';
 
-        return view('/pages/dashboard');
+        return view('/pages/dashboard', compact('active_menu'));
     }
 
     public function register(Request $request)

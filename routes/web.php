@@ -1,7 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthController;
-use App\Http\Controllers\SampleController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -38,3 +38,5 @@ Route::post('/submit-register', [AuthController::class, 'register'])->name('subm
 Route::post('/submit-login', [AuthController::class, 'login'])->name('submit-login');
 
 
+Route::get('/user', [UserController::class, 'create']);
+Route::post('/user', [UserController::class, 'store'])->name('create-user');
