@@ -12,6 +12,16 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
     <!-- Theme style -->
     <link href="{{ asset('assets/dist/css/adminlte.min.css') }}" rel="stylesheet">
+
+
+  
+    <!-- SweetAlert2 -->
+    <link rel="stylesheet" href="{{ asset('assets/plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css') }}">
+    <!-- Toastr -->
+    <link rel="stylesheet" href="{{ asset('assets/plugins/toastr/toastr.min.css') }}">
+    <!-- Theme style -->
+   
+
     <!-- icheck bootstrap -->
     <link href="{{ asset('assets/plugins/icheck-bootstrap/icheck-bootstrap.min.css') }}" rel="stylesheet">
     <!-- Font Awesome -->
@@ -29,14 +39,12 @@
     <!-- summernote -->
     <link rel="stylesheet" href="{{ asset('assets/plugins/summernote/summernote-bs4.min.css') }}">
 
-    <!-- @include('includes.head')
-    @include('includes.header') -->
   </head>
 
 </header>
 
 
-<body class="hold-transition sidebar-mini layout-fixed">
+<body class="hold-transition sidebar-mini layout-fixed" style="height:auto;">
   <div class="wrapper">
 
     <!-- Preloader -->
@@ -144,7 +152,7 @@
               </a>
             </li>
             <li class="nav-item menu-open">
-              <a href="{{ ('user') }}" class="nav-link {{ isset($active_menu) && $active_menu == 'user' ? 'active' : '' }}">
+              <a href="{{ ('user') }}" class="nav-link {{ isset($active_menu) && $active_menu == 'user' ? 'active' : ''  }}">
                 <i class="nav-icon fas fa-solid fa-user"></i>
                 <p>
                   User
@@ -159,7 +167,7 @@
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a href="./index2.html" class="nav-link">
+                  <a href="{{ ('list') }}" class="nav-link {{ isset($active_list) && $active_list == 'list' ? 'active' : '' }}">
                     <i class="far fa-circle nav-icon"></i>
                     <p>List</p>
                   </a>
@@ -237,7 +245,28 @@
   <!-- AdminLTE for demo purposes -->
   <!-- <script src="{{ asset('assets/dist/js/demo.js') }}"></script>
 AdminLTE dashboard demo (This is only for demo purposes) -->
+
+
+
   <script src="{{ asset('assets/dist/js/pages/dashboard.js') }}"></script>
+  <script src="{{ asset('assets/plugins/jquery/jquery.min.js') }}"></script>
+  <script src="{{ asset('assets/plugins/datatables/jquery.dataTables.min.js') }}"></script>
+  <script src="{{ asset('assets/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js') }}"></script>
+  <script src="{{ asset('assets/plugins/datatables-responsive/js/dataTables.responsive.min.js') }}"></script>
+  <script src="{{ asset('assets/plugins/datatables-responsive/js/responsive.bootstrap4.min.js') }}"></script>
+  <script src="{{ asset('assets/plugins/datatables-buttons/js/dataTables.buttons.min.js') }}"></script>
+  <script src="{{ asset('assets/plugins/datatables-buttons/js/buttons.bootstrap4.min.js') }}"></script>
+  <script src="{{ asset('assets/plugins/jszip/jszip.min.js') }}"></script>
+  <script src="{{ asset('assets/plugins/pdfmake/pdfmake.min.js') }}"></script>
+  <script src="{{ asset('assets/plugins/pdfmake/vfs_fonts.js') }}"></script>
+  <script src="{{ asset('assets/plugins/datatables-buttons/js/buttons.html5.min.js') }}"></script>
+  <script src="{{ asset('assets/plugins/datatables-buttons/js/buttons.print.min.js') }}"></script>
+  <script src="{{ asset('assets/plugins/datatables-buttons/js/buttons.colVis.min.js') }}"></script>
+  <!-- AdminLTE App -->
+  <script src="{{ asset('assets/dist/js/adminlte.min.js') }}"></script>
+  <!-- Page specific script -->
+
+  @yield('script')
 
 </body>
 

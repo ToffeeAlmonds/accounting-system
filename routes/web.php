@@ -39,4 +39,11 @@ Route::post('/submit-login', [AuthController::class, 'login'])->name('submit-log
 
 
 Route::get('/user', [UserController::class, 'create']);
+
 Route::post('/user', [UserController::class, 'store'])->name('create-user');
+
+
+Route::get('/list', [UserController::class, 'displayList']);
+
+
+Route::patch('/users/{id}', [UserController::class, 'update'])->name('users.update');

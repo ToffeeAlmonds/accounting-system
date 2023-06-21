@@ -1,13 +1,13 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use Illuminate\Http\Request;
 use App\Models\User;
 
-
 class UserController extends Controller
 {
- 
+
     /**
      * Display a listing of the resource.
      */
@@ -23,7 +23,16 @@ class UserController extends Controller
     {
         $active_menu = 'user';
 
-        return view('/pages/user', compact('active_menu'));
+        return view('/pages/user/user', compact('active_menu'));
+    }
+
+    public function displayList()
+    {
+        $active_list = 'list';
+        $active_sub_list = '';
+        $users = User::all();
+
+        return view('/pages/user/list', compact('active_list', 'users',));
     }
 
     /**
@@ -37,8 +46,8 @@ class UserController extends Controller
             'email' => 'required',
             'password' => 'required|confirmed'
         ]);
-        
-        $model = new User(); 
+
+        $model = new User();
 
         if ($request->hasFile('user_image')) {
             $file = $request->file('user_image');
@@ -74,7 +83,12 @@ class UserController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $user = User::find($id);
+        print_r ($user);
+
+
+        // Pass the retrieved record to the view
+        // return view('/pages/user/list', compact('user'));
     }
 
     /**
@@ -82,7 +96,17 @@ class UserController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        print_r($id); exit;
+        // $user = User::find($id);
+        // $user->first_name = $request->input('first_name');
+        // $user->last_name = $request->input('last_name');
+        // $user->email = $request->input('email');
+        // $user->password = $request->input('password');
+        // // Update other fields as needed
+        // $user->save();
+
+        // return redirect()->back()->with('success', 'You edited the form succesfully!');
+        // Redirect or return a response indicating success
     }
 
     /**
